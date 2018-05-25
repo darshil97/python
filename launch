@@ -1,0 +1,6 @@
+#!/bin/sh
+
+export GI_TYPELIB_PATH=$GI_TYPELIB_PATH:/home/yantra/aravis-0.4.0/src
+export LD_LIBRARY_PATH=home/yantra/aravis-0.4.0/src/.libs
+
+python $*

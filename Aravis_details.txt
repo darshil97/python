@@ -1,0 +1,25 @@
+1. camera = Aravis.camera.new(sys.argv[1])
+   it connects to device giving the argument about port address
+
+2. device = camera.get_device()
+   gets the device ip address (interface and device address)
+
+3. camera.create_stream()
+   Creates a new ArvStream for video stream handling.
+	ArvStream — Abstract base class for video stream reception
+
+4. stream.push_buffer()
+   Pushes a ArvBuffer to the stream thread. The stream takes ownership of buffer,
+   and will free all the buffers still in its queues when destroyed.
+	ArvBuffer - Buffer for storage of video frames. 
+
+5. arv_buffer_new_allocate()
+   Creates a new buffer for the storage of the video stream images. The data space
+   is allocated by this function, and will be freed when the buffer is destroyed.
+
+6. arv_stream_pop_buffer()
+   Pops a buffer from the output queue of stream . The retrieved buffer may contain
+   an invalid image. Caller should check the buffer status before using it. This 
+   function blocks until a buffer is available.
+	
+		
